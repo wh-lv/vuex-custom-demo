@@ -1,5 +1,11 @@
 /**
- * 1、
+ * 1、维护状态 state
+ * 2、修改状态 commit
+ * 3、业务逻辑分发 dispatch
+ * 4、状态派发 getters
+ * 5、实现 state 响应式
+ * 6、插件
+ * 7、混入
  */
 
 let Vue;
