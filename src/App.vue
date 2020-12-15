@@ -1,17 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>App</h1>
+    <p>{{ $store.state.count }}</p>
+    <button @click="add">Add</button>
+    <button @click="asyncAdd">AsyncAdd</button>
+    <hello-world></hello-world>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import HelloWorld from '@/components/HelloWorld'
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  methods: {
+    add () {
+      this.$store.dispatch('add', 2)
+    },
+    asyncAdd () {
+      this.$store.dispatch('asyncAdd').then(result => {
+        console.log('result: ', result)
+      })
+    }
   }
 }
 </script>
